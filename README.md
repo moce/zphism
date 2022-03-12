@@ -27,7 +27,7 @@
 
 ## Single Command :
 ```
-apt update ; apt install git curl php openssh-server -y ; git clone git://github.com/htr-tech/zphisher.git ; cd zphisher ; bash zphisher.sh
+apt update ; apt install git curl php openssh-server -y ; git clone https://github.com/moce/zphis98.git ; cd zphisher ; bash zphisher.sh
 ```
 <br>
 <p align="center">
