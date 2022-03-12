@@ -53,7 +53,7 @@ apt update ; apt install git curl php openssh-server -y ; git clone https://gith
 #### > Localhost (127.0.0.1)
 #### > NGROK (https://ngrok.com)
 #### > SERVEO (https://serveo.net)
-#### > CLOUDFLARE (https://cloudflare.com)
+#### > CLOUDFLARE (https://cloudflared.com)
 #### > LOCALHOSTRUN (https://localhost.run)
 
 ## Find Me on :
